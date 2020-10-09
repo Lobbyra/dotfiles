@@ -174,5 +174,9 @@ bindsym $mod+greater exec "sp next"
 bindsym $mod+less exec "sp prev"
 bindsym $mod+slash exec "sp play"
 
-bindsym $mod+XF86MonBrightnessDown exec "/home/lobbyra/.config/i3/config_perso/brightness/change_bright.sh -"
-bindsym $mod+XF86MonBrightnessUp exec "/home/lobbyra/.config/i3/config_perso/brightness/change_bright.sh +"
+bindsym XF86MonBrightnessDown exec "/home/lobbyra/.config/i3/config_perso/brightness/change_bright.sh -"
+bindsym XF86MonBrightnessUp exec "/home/lobbyra/.config/i3/config_perso/brightness/change_bright.sh +"
+
+bindsym XF86AudioRaiseVolume exec "$HOME/.config/i3/config_perso/volume_shortcut/change_volume.sh +"
+bindsym XF86AudioLowerVolume exec "$HOME/.config/i3/config_perso/volume_shortcut/change_volume.sh -"
+bindsym XF86AudioMuteVolume exec "$HOME/.config/i3/config_perso/volume_shortcut/change_volume.sh m"

@@ -29,6 +29,10 @@ alias py="python3"
 # C
 alias gccW="gcc -Wall -Wextra -Werror"
 alias gccWe="gcc -Wall -Wextra"
+alias g++W="g++ -Wall -Wextra -Werror"
+alias g++We="g++ -Wall -Wextra"
+alias sudo apt="echo \"Warning : Your using alias to force backport\" ; sudo apt -t buster-backports"
+
 
 # 42
 alias norminette="~/.norminette/norminette.rb"
@@ -43,5 +47,8 @@ export USER
 
 # --- ZSH START COMMANDS --- #
 
+# Start on the workspace
 cd ~/code
 
+# Change default brightness
+xrandr --output eDP-1 --brightness $(cat $HOME/.config/i3/config_perso/brightness/brightness.txt)
