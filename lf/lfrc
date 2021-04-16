@@ -1,0 +1,23 @@
+set nopreview
+set drawbox
+set tabstop 4
+set hidden
+set ratios '1'
+set promptfmt "%d\033[0m\033[1m%f\033[0m"
+set info size
+
+map <enter> %echo "vim" $f | pbcopy ; echo "Path copied to clipboard"
+
+cmd mkdir ${{
+    set -f
+    read newd
+    mkdir -- "$newd"
+    mv -- $fx "$newd"
+}}
+
+map d trash
+
+cmd trash ${{
+    mkdir -p ~/.trash
+    IFS="`printf '\n\t'`"; mv $f ~/.trash
+}}

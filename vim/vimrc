@@ -1,0 +1,43 @@
+"#########
+"# Plugins
+"#########
+
+call plug#begin('~/.vim/plugged')
+
+"Plug 'drewtempelmeyer/palenight.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
+
+call plug#end()
+
+"#######################
+"# Miscellaneous changes
+"#######################
+set mouse=a
+
+"################
+"# Typing changes
+"################
+
+set tabstop     =4
+set softtabstop =4
+set shiftwidth  =4
+set expandtab
+
+"################
+"# Graphic changes
+"################
+
+"# Set color column at 80 chars
+set colorcolumn=80
+
+"# Enable synthax in file that vim support
+syntax on
+
+"# Display numbers at lines
+set number
+
+" Fancy vim theme
+set termguicolors
+set background=dark
+colorscheme onedark

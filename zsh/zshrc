@@ -1,0 +1,96 @@
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/jecaudal/dotfiles/zsh/oh-my-zsh"
+
+ZSH_THEME="sunrise"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+export EDITOR="vim"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+###########CUSTOM AREA START###############"
+
+alias kub="kubectl"
+alias kubg="kubectl get"
+alias kubd="kubectl delete"
+alias kuba="kubectl apply"
+
+#### STDHEADER AREA ###
+
+MAIL="jecaudal@student.42.fr"
+USER=jecaudal
+
+export MAIL
+export USER
+
+#### STDHEADER AREA ###
+
+alias python="python3"
+
+#### PRINT ALIAS ###
+# Plugin : Init print-alias
+# export PRINT_ALIAS_PREFIX='  └─> '
+export PRINT_ALIAS_PREFIX='  ➡️  '
+export PRINT_ALIAS_FORMAT=$'\e[1m'
+export PRINT_NON_ALIAS_FORMAT=$'\e[0m'
+
+export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
+export PRINT_ALIAS_IGNORE_ALIASES=(my_alias my_other_alias)
+source ~/.zsh/print-alias/print-alias.plugin.zsh
+
+export PATH=$HOME/.brew/bin:$PATH
+alias nrm="~/.norminette/norminette.rb"
+alias py="python3"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+alias code="open -a /Applications/Visual\ Studio\ Code.app"
+export PATH=$HOME/.brew/bin:$PATH
+
+### COMPILATION
+alias gck="git checkout"
+alias gcm="git commit"
+alias gpu="git pull"
+alias gme="git merge"
+
+alias gpp="clang++ -Wall -Wextra"
+alias gps="clang++ -Wall -Wextra -fsanitize=address"
+alias gcc="clang -Wall -Wextra"
+alias gcs="clang -Wall -Wextra -fsanitize=address"
+
+alias make="command make -j"
+
+###
+
+alias gnf="cd ~/goinfre"
+
+alias zrc="vim ~/.zshrc"
+alias vrc="vim ~/.vimrc"
+alias trc="vim ~/.tmux.conf"
+alias lrc="vim ~/.config/lf/lfrc"
+
+alias rezsh="source ~/.zshrc"
+
+### PROJECTS
+alias web="cd ~/code/webserv"
+###
+
+# Adding pip3 binaries
+export PATH=/Users/jecaudal/Library/Python/3.7/bin:$PATH
+
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
