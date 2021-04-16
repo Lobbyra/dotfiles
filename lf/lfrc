@@ -1,23 +1,31 @@
+# Disable preview
 set nopreview
-set drawbox
-set tabstop 4
-set hidden
-set ratios '1'
-set promptfmt "%d\033[0m\033[1m%f\033[0m"
-set info size
 
-map <enter> %echo "vim" $f | pbcopy ; echo "Path copied to clipboard"
+# Set tab size to 4 spaces
+set tabstop 4
+
+# Show hidden files
+set hidden
+
+# Show only one column
+set ratios '1'
+
+# Simplify the top prompt
+set promptfmt "%d\033[0m\033[1m%f\033[0m"
+
+# Copy you selection in vim ready to edit in another window
+map <enter> %echo "vim" $f | (pbcopy || wl-copy) ; echo "Path copied to clipboard"
 
 cmd mkdir ${{
     set -f
-    read newd
-    mkdir -- "$newd"
-    mv -- $fx "$newd"
+    #read newd
+    mkdir -- $1
+    mv -- $fx $1
 }}
-
-map d trash
 
 cmd trash ${{
     mkdir -p ~/.trash
-    IFS="`printf '\n\t'`"; mv $f ~/.trash
+    IFS="`printf '\n\t'`"; mv -f $f ~/.trash
 }}
+
+map d trash

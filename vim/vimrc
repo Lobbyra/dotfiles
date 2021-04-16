@@ -2,11 +2,12 @@
 "# Plugins
 "#########
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/dotfiles/vim/plugged')
 
 "Plug 'drewtempelmeyer/palenight.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'hzchirs/vim-material'
 
 call plug#end()
 
@@ -38,6 +39,9 @@ syntax on
 set number
 
 " Fancy vim theme
-set termguicolors
-set background=dark
+let os_sys = system("uname")
+if (os_sys == "Linux" )
+    set termguicolors
+endif
+
 colorscheme onedark

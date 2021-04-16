@@ -1,7 +1,16 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jecaudal/dotfiles/zsh/oh-my-zsh"
+# DTF -> Dotfiles
+# OMZ -> oh-my-zsh
+export DTF_ROOT="$HOME/dotfiles"
+export OMZ_ROOT="$DTF_ROOT/zsh/oh-my-zsh"
+export ZSH_ROOT="$DTF_ROOT/zsh"
+export VIM_ROOT="$DTF_ROOT/vim"
 
-ZSH_THEME="sunrise"
+export ZSH_THEME="sunrise"
+
+ZDOTDIR=$ZSH_ROOT
+export HISTFILE=$ZSH_ROOT
+compinit -d $ZSH_ROOT/.zcompdump
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -12,7 +21,7 @@ plugins=(
   git
 )
 
-source $ZSH/oh-my-zsh.sh
+source $OMZ_ROOT/oh-my-zsh.sh
 
 # User configuration
 
@@ -25,21 +34,13 @@ export EDITOR="vim"
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 ###########CUSTOM AREA START###############"
+#
+alias lf="command lf -config $HOME/dotfiles/lf/lfrc"
 
 alias kub="kubectl"
 alias kubg="kubectl get"
 alias kubd="kubectl delete"
 alias kuba="kubectl apply"
-
-#### STDHEADER AREA ###
-
-MAIL="jecaudal@student.42.fr"
-USER=jecaudal
-
-export MAIL
-export USER
-
-#### STDHEADER AREA ###
 
 alias python="python3"
 
@@ -52,14 +53,13 @@ export PRINT_NON_ALIAS_FORMAT=$'\e[0m'
 
 export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
 export PRINT_ALIAS_IGNORE_ALIASES=(my_alias my_other_alias)
-source ~/.zsh/print-alias/print-alias.plugin.zsh
+source $ZSH_ROOT/print-alias/print-alias.plugin.zsh
 
 export PATH=$HOME/.brew/bin:$PATH
 alias nrm="~/.norminette/norminette.rb"
 alias py="python3"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-alias code="open -a /Applications/Visual\ Studio\ Code.app"
 export PATH=$HOME/.brew/bin:$PATH
 
 ### COMPILATION
@@ -82,7 +82,10 @@ alias gnf="cd ~/goinfre"
 alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
 alias trc="vim ~/.tmux.conf"
-alias lrc="vim ~/.config/lf/lfrc"
+alias lrc="vim ~/dotfiles/lf/lfrc"
+alias krc="vim ~/dotfiles/kitty/kitty.conf"
+alias src="vim ~/dotfiles/sway/config"
+
 
 alias rezsh="source ~/.zshrc"
 
@@ -91,6 +94,6 @@ alias web="cd ~/code/webserv"
 ###
 
 # Adding pip3 binaries
-export PATH=/Users/jecaudal/Library/Python/3.7/bin:$PATH
+export PATH=$HOME/Library/Python/3.7/bin:$PATH
 
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
