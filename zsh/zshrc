@@ -8,10 +8,6 @@ export VIM_ROOT="$DTF_ROOT/vim"
 
 export ZSH_THEME="sunrise"
 
-ZDOTDIR=$ZSH_ROOT
-export HISTFILE=$ZSH_ROOT
-compinit -d $ZSH_ROOT/.zcompdump
-
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -85,6 +81,7 @@ alias trc="vim ~/.tmux.conf"
 alias lrc="vim ~/dotfiles/lf/lfrc"
 alias krc="vim ~/dotfiles/kitty/kitty.conf"
 alias src="vim ~/dotfiles/sway/config"
+alias dot="cd ~/dotfiles"
 
 
 alias rezsh="source ~/.zshrc"
@@ -95,5 +92,7 @@ alias web="cd ~/code/webserv"
 
 # Adding pip3 binaries
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
+
+[ -z "$SWAYSOCK" ] && { sway 2> /dev/null }
 
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
