@@ -8,6 +8,7 @@ call plug#begin('~/dotfiles/vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'hzchirs/vim-material'
+Plug 'mkitt/tabline.vim'
 
 call plug#end()
 

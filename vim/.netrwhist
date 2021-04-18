@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/ubuntu/webserv/srcs'
+let g:netrw_dirhist_2='/home/ubuntu/webserv'
+let g:netrw_dirhist_1='/home/ubuntu'
+let g:netrw_dirhist_0='/home/ubuntu/dotfiles'
+let g:netrw_dirhist_9='/home/ubuntu/dotfiles/lf'
+let g:netrw_dirhist_8='/home/ubuntu/webserv/srcs'
+let g:netrw_dirhist_7='/home/ubuntu/webserv'
+let g:netrw_dirhist_6='/home/ubuntu'
+let g:netrw_dirhist_5='/home'
+let g:netrw_dirhist_4='/'

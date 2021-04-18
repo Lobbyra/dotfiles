@@ -49,7 +49,7 @@ export PRINT_NON_ALIAS_FORMAT=$'\e[0m'
 
 export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
 export PRINT_ALIAS_IGNORE_ALIASES=(my_alias my_other_alias)
-source $ZSH_ROOT/print-alias/print-alias.plugin.zsh
+#source $ZSH_ROOT/print-alias/print-alias.plugin.zsh
 
 export PATH=$HOME/.brew/bin:$PATH
 alias nrm="~/.norminette/norminette.rb"
@@ -58,16 +58,21 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 export PATH=$HOME/.brew/bin:$PATH
 
-### COMPILATION
+### GIT
 alias gck="git checkout"
 alias gcm="git commit"
 alias gpu="git pull"
 alias gme="git merge"
 
-alias gpp="clang++ -Wall -Wextra"
-alias gps="clang++ -Wall -Wextra -fsanitize=address"
+# COMPIILATION
+## C
 alias gcc="clang -Wall -Wextra"
 alias gcs="clang -Wall -Wextra -fsanitize=address"
+
+## C++
+alias gcc="clang -Wall -Wextra"
+alias gpp="clang++ -Wall -Wextra"
+alias gps="clang++ -Wall -Wextra -fsanitize=address"
 
 alias make="command make -j"
 
