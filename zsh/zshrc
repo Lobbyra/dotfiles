@@ -51,12 +51,17 @@ export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
 export PRINT_ALIAS_IGNORE_ALIASES=(my_alias my_other_alias)
 #source $ZSH_ROOT/print-alias/print-alias.plugin.zsh
 
-export PATH=$HOME/.brew/bin:$PATH
 alias nrm="~/.norminette/norminette.rb"
 alias py="python3"
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
+# Add brew binaries from MAC
 export PATH=$HOME/.brew/bin:$PATH
+
+# Add python binaries
+export PATH=$HOME/Library/Python/3.7/bin:$PATH
+
+# Add cargo binaries
+export PATH=$HOME/.cargo/bin:$PATH
 
 ### GIT
 alias gck="git checkout"
@@ -96,7 +101,6 @@ alias web="cd ~/code/webserv"
 ###
 
 # Adding pip3 binaries
-export PATH=$HOME/Library/Python/3.7/bin:$PATH
 
 [ -z "$SWAYSOCK" ] && { sway 2> /dev/null }
 

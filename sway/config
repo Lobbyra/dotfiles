@@ -12,7 +12,7 @@ set $term kitty -c $HOME/dotfiles/kitty/kitty.conf
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 # Wallpaper path
-set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+set $wallpaper /home/lobbyra/dotfiles/sway/wallpapers/sway_fhd.png
 
 #########
 # General
@@ -24,6 +24,11 @@ output * bg $wallpaper fill
 ##############
 # Key Bindings
 ##############
+
+input * {
+    xkb_layout "us"
+    xkb_variant "intl"
+}
 
 # Start a terminal
 bindsym $mod+Return exec $term
@@ -48,9 +53,10 @@ bindsym $mod+Mod1+i exec chromium --new-window https://intra.42.fr
 bindsym $mod+Mod1+y exec chromium --new-window https://youtube.com
 bindsym $mod+Mod1+t exec chromium --new-window https://translate.google.com
 bindsym $mod+Mod1+g exec chromium --new-window https://github.com
+bindsym $mod+Mod1+r exec chromium --new-window https://reddit.com
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec 'swaymsg exit'
 
 # Change Focus
 bindsym $mod+Left focus left
@@ -139,6 +145,9 @@ bar {
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+
+    # Disable trailing app in the bar
+    tray_output none
 }
 
 include /etc/sway/config.d/*
