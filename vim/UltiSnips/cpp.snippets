@@ -1,0 +1,211 @@
+snippet main
+int         main(void) {
+    ${1://code}
+    return (0);
+}
+endsnippet
+
+snippet for
+for ($1; $2; $3) {
+    $4
+}
+endsnippet
+
+snippet Main
+int         main(int argc, char **argv) {
+    ${1://code}
+    return (0);
+}
+endsnippet
+
+snippet malloc
+if (!(${1:Name} = (${2:Cast})malloc(sizeof(${3:Size}) * (${4:Lenght}))))
+    return (NULL);
+endsnippet
+
+snippet I
+#include <$1>
+endsnippet
+
+snippet i
+#include "$1.hpp"
+endsnippet
+
+snippet leaks
+__attribute__((destructor)) static void leak() { getchar(); }
+endsnippet
+
+snippet write
+write($1, $2, $3);
+endsnippet
+
+snippet ret
+return ($1);
+endsnippet
+
+snippet protec
+#ifndef ${1:Name}_HPP
+# define ${1:Name}_HPP
+
+${2:/*Code Here*/}
+
+#endif
+endsnippet
+
+snippet printf
+printf("$1"$2);
+endsnippet
+
+snippet l_printf
+l_printf("$1"$2);
+endsnippet
+
+snippet if
+if ($1)
+    $2
+endsnippet
+
+snippet while
+while ($1) {
+    $2
+}
+endsnippet
+
+snippet class
+class    ${1:ClassName} {
+ public:
+
+    ${1:ClassName}(void);
+    ${1:ClassName}(${1:ClassName} const &src);
+    ${1:ClassName} &operator=(${1:ClassName} const &src);
+    virtual ~${1:ClassName}();
+
+    ${2:/*Code Here*/};
+
+ private:
+
+    /*Data Here*/;
+
+};
+
+std::ostream    &operator<<(std::ostream &o, ${1:ClassName} const &i);
+
+endsnippet
+
+snippet cout
+std::cout << $1 << std::endl;
+endsnippet
+
+snippet Cout
+std::cout << \
+$1 << \
+std::endl;
+endsnippet
+
+snippet endl
+std::endl
+endsnippet
+
+snippet cerr
+std::cerr << $1 << std::endl;
+endsnippet
+
+snippet this
+this->
+endsnippet
+
+snippet constru
+${1:ClassName}::${1:ClassName}(${2:parameters}) : ${3:init} {
+    return ;
+}
+endsnippet
+
+snippet destru
+~${1:ClassName}::${1:ClassName}(${2:parameters}) : ${3:init} {
+    return ;
+}
+endsnippet
+
+snippet fun
+${1:FunRetType}    ${2:FunName}(${3:Parameters}) {
+    ${4:/*Code Here*/};
+}
+endsnippet
+
+snippet Fun
+${1:FunRetType}    ${2:ClassName}::${3:FunName}(${4:Parameters}) {
+    ${5:/*Code Here*/};
+}
+endsnippet
+
+snippet canon
+# include "${1:ClassName}.hpp"
+
+/*
+**    /// CONSTRUCTORS & DESTRUCTORS PART \\
+*/
+${1:ClassName}::${1:ClassName}(void) {
+    return ;
+}
+
+${1:ClassName}::${1:ClassName}(${1:ClassName} const &src) {
+    *this = src;
+}
+
+${1:ClassName}::~${1:ClassName}() {
+    return ;
+}
+
+/*
+**    /// FUNCTION MEMBER PART \\\
+*/
+$2
+
+/*
+**    /// OPERATOR OVERLOADS PART \\\
+*/
+${1:ClassName}    &${1:ClassName}::operator=(${1:ClassName} const &src) {
+    return (*this);
+}
+
+std::ostream    &operator<<(std::ostream &o, ${1:ClassName} const &i) {
+    o /*<< DATA*/ << std::endl;
+    return (o);
+}
+endsnippet
+
+snippet try
+try {
+    $1
+} catch (std::exception &e) {
+    std::cerr << e.what() << std::endl;
+}
+endsnippet
+
+snippet temp
+template <typename $1>
+endsnippet
+
+snippet def
+#define ${1:NAME} ${2:VALUE}
+endsnippet
+
+snippet str
+std::string 
+endsnippet
+
+snippet map
+std::map<$1, $2> 
+endsnippet
+
+snippet lst
+std::list<$1> 
+endsnippet
+
+snippet queue
+std::queue<$1> 
+endsnippet
+
+snippet logic
+std::logic_error("$1");
+endsnippet

@@ -39,6 +39,7 @@ alias kubd="kubectl delete"
 alias kuba="kubectl apply"
 
 alias python="python3"
+alias py3="python3"
 
 #### PRINT ALIAS ###
 # Plugin : Init print-alias
@@ -49,7 +50,7 @@ export PRINT_NON_ALIAS_FORMAT=$'\e[0m'
 
 export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
 export PRINT_ALIAS_IGNORE_ALIASES=(my_alias my_other_alias)
-#source $ZSH_ROOT/print-alias/print-alias.plugin.zsh
+source $ZSH_ROOT/print-alias/print-alias.plugin.zsh
 
 alias nrm="~/.norminette/norminette.rb"
 alias py="python3"
@@ -93,6 +94,12 @@ alias krc="vim ~/dotfiles/kitty/kitty.conf"
 alias src="vim ~/dotfiles/sway/config"
 alias dot="cd ~/dotfiles"
 
+################
+# TMUX Launchers
+################
+export TMUX_PRO_PATH="$DTF_ROOT/tmux/launchers"
+# Tmux project QHD Launcher
+alias tpr="/bin/bash $TMUX_PRO_PATH/basic.sh"
 
 alias rezsh="source ~/.zshrc"
 

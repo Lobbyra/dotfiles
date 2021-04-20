@@ -4,11 +4,14 @@
 
 call plug#begin('~/dotfiles/vim/plugged')
 
-"Plug 'drewtempelmeyer/palenight.vim'
+" Colorscheme
 Plug 'joshdick/onedark.vim'
+" Additionnal synthax
 Plug 'sheerun/vim-polyglot'
-Plug 'hzchirs/vim-material'
+" Display the tab index
 Plug 'mkitt/tabline.vim'
+" Ultisnip engine
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -44,5 +47,11 @@ let os_sys = system("uname")
 if (os_sys == "Linux" )
     set termguicolors
 endif
+
+" Ultisnip config
+let g:UltiSnipsExpandTrigger="<tab>"
+
+" Search and replace with ctrl+r in visual mode
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 colorscheme onedark
