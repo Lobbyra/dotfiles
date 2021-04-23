@@ -12,6 +12,12 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mkitt/tabline.vim'
 " Ultisnip engine
 Plug 'SirVer/ultisnips'
+" Surround auto chars need to be surrounded
+Plug 'Raimondi/delimitMate'
+" Put in color hex text
+Plug 'vim-scripts/colorizer'
+" Highlight useless whitespaces
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
@@ -29,12 +35,19 @@ set softtabstop =4
 set shiftwidth  =4
 set expandtab
 
-"################
+" Use system clipboard
+set clipboard=unnamed
+
+"#################
 "# Graphic changes
-"################
+"#################
 
 "# Set color column at 80 chars
 set colorcolumn=80
+
+"# Show tabs
+set list
+set listchars=tab:>-,extends:>,precedes:<
 
 "# Enable synthax in file that vim support
 syntax on
@@ -53,5 +66,11 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 " Search and replace with ctrl+r in visual mode
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" Set view tree in explore mode
+" let g:netrw_liststyle="3"
+
+" Set cursor on the first file in explore mode
+let g:netrw_banner = 0
 
 colorscheme onedark

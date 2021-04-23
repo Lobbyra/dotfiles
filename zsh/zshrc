@@ -69,6 +69,9 @@ alias gck="git checkout"
 alias gcm="git commit"
 alias gpu="git pull"
 alias gme="git merge"
+alias gad="git add"
+alias gdi="git diff"
+alias glo="git log"
 
 # COMPIILATION
 ## C
@@ -86,7 +89,7 @@ alias make="command make -j"
 
 alias gnf="cd ~/goinfre"
 
-alias zrc="vim ~/.zshrc"
+alias zrc="vim ~/.zshrc ; source ~/.zshrc"
 alias vrc="vim ~/.vimrc"
 alias trc="vim ~/.tmux.conf"
 alias lrc="vim ~/dotfiles/lf/lfrc"
@@ -102,6 +105,8 @@ export TMUX_PRO_PATH="$DTF_ROOT/tmux/launchers"
 alias tpr="/bin/bash $TMUX_PRO_PATH/basic.sh"
 
 alias rezsh="source ~/.zshrc"
+
+alias v="vim +E"
 
 ### PROJECTS
 alias web="cd ~/code/webserv"

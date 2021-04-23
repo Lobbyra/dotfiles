@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/jecaudal/code/webserv'
+let g:netrw_dirhist_4='/Users/jecaudal/code/webserv/srcs'
+let g:netrw_dirhist_3='/Users/jecaudal/code/webserv/srcs/utils'
+let g:netrw_dirhist_2='/Users/jecaudal/code/webserv/srcs'
+let g:netrw_dirhist_1='/Users/jecaudal/code/webserv/srcs/utils'
+let g:netrw_dirhist_0='/Users/jecaudal/code/webserv/srcs'
+let g:netrw_dirhist_9='/Users/jecaudal/code/webserv/srcs/classes'
+let g:netrw_dirhist_8='/Users/jecaudal/code/webserv/srcs'
+let g:netrw_dirhist_7='/Users/jecaudal/code/webserv'
+let g:netrw_dirhist_6='/Users/jecaudal/code/webserv/docs'
