@@ -48,6 +48,7 @@ bindsym $mod+Mod1+v exec code
 bindsym $mod+Mod1+s exec slack
 bindsym $mod+Mod1+d exec discord
 bindsym $mod+Mod1+m exec spotify
+bindsym $mod+Mod1+n exec notion-snap
 bindsym $mod+Mod1+j exec /home/lobbyra/.joplin/Joplin.AppImage
 bindsym $mod+Mod1+i exec chromium --new-window https://intra.42.fr
 bindsym $mod+Mod1+y exec chromium --new-window https://youtube.com

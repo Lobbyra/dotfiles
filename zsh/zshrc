@@ -106,7 +106,7 @@ alias tpr="/bin/bash $TMUX_PRO_PATH/basic.sh"
 
 alias rezsh="source ~/.zshrc"
 
-alias v="vim +E"
+alias v="vim +Explore"
 
 ### PROJECTS
 alias web="cd ~/code/webserv"
