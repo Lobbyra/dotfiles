@@ -11,24 +11,10 @@ set $term kitty -c $HOME/dotfiles/kitty/kitty.conf
 # App launch selection
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
-# Wallpaper path
-set $wallpaper /home/lobbyra/dotfiles/sway/wallpapers/sway_fhd.png
-
-#########
-# General
-#########
-
-# Print Wallpaper
-output * bg $wallpaper fill
-
 ##############
 # Key Bindings
 ##############
 
-input * {
-    xkb_layout "us"
-    xkb_variant "intl"
-}
 
 # Start a terminal
 bindsym $mod+Return exec $term
@@ -57,7 +43,7 @@ bindsym $mod+Mod1+g exec chromium --new-window https://github.com
 bindsym $mod+Mod1+r exec chromium --new-window https://reddit.com
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec 'swaymsg exit'
+bindsym $mod+Shift+e exec 'i3-msg exit'
 
 # Change Focus
 bindsym $mod+Left focus left
@@ -139,7 +125,7 @@ bar {
     position top
 
     # Print date in your right-top corner
-    status_command while date +'%Y-%m-%d %R'; do sleep 1; done
+    status_command while ~/dotfiles/sway/bar.sh; do sleep 1; done
 
     colors {
         statusline #ffffff
@@ -151,4 +137,3 @@ bar {
     tray_output none
 }
 
-include /etc/sway/config.d/*

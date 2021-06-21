@@ -70,6 +70,9 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " Set cursor on the first file in explore mode
 let g:netrw_banner = 0
 
+" Display numbers in Explorer mode
+let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+
 " For vim to use explore when E command
 command! -nargs=* -bar -bang -count=0 -complete=dir E Explore <args>
 

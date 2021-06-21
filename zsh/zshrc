@@ -1,3 +1,6 @@
+# Set keyboard to US international
+setxkbmap us intl
+
 # Path to your oh-my-zsh installation.
 # DTF -> Dotfiles
 # OMZ -> oh-my-zsh
@@ -5,6 +8,7 @@ export DTF_ROOT="$HOME/dotfiles"
 export OMZ_ROOT="$DTF_ROOT/zsh/oh-my-zsh"
 export ZSH_ROOT="$DTF_ROOT/zsh"
 export VIM_ROOT="$DTF_ROOT/vim"
+
 
 export ZSH_THEME="sunrise"
 
@@ -94,7 +98,7 @@ alias vrc="vim ~/.vimrc"
 alias trc="vim ~/.tmux.conf"
 alias lrc="vim ~/dotfiles/lf/lfrc"
 alias krc="vim ~/dotfiles/kitty/kitty.conf"
-alias src="vim ~/dotfiles/sway/config"
+alias irc="vim ~/dotfiles/i3/config"
 alias dot="cd ~/dotfiles"
 
 ################
@@ -114,6 +118,6 @@ alias web="cd ~/code/webserv"
 
 # Adding pip3 binaries
 
-[ -z "$SWAYSOCK" ] && { sway 2> /dev/null }
+[[ $(tty) == '/dev/tty1' ]] && startx
 
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
