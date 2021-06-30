@@ -37,6 +37,8 @@ export EDITOR="vim"
 #
 alias lf="command lf -config $HOME/dotfiles/lf/lfrc"
 
+alias lock="i3lock-fancy -t ''"
+
 alias kub="kubectl"
 alias kubg="kubectl get"
 alias kubd="kubectl delete"
@@ -118,6 +120,7 @@ alias web="cd ~/code/webserv"
 
 # Adding pip3 binaries
 
-[[ $(tty) == '/dev/tty1' ]] && startx
+xmodmap -e 'keycode 112='
+xmodmap -e 'keycode 117='
 
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}

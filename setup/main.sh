@@ -1,35 +1,40 @@
 #!/bin/bash
 
-# Dotfiles git repo in ~/dotfiles
-# Main config files in .config
+clear
 
-# zim
-# vim init   : ~/.vimrc
-#   saved in : ~/dotfiles/vim/vimrc
-#
-# vim files  : ~/.vim
-#   saved in : ~/dotfiles/vim/
+sudo add-apt-repository -y ppa:kgilmer/speed-ricer &> /dev/null
 
-# zsh
-# zsh init   : ~/.zshrc
-#   saved in : ~/dotfiles/zsh/zshrc
-#
-# zsh files  : ~/.zsh
-#   saved in : ~/dotfiles/zsh/
-#
-# oh-my-zsh files : ~/.
+printf "⬆️  Updating you packages...\n"
+sudo apt -qqq update
+printf "✅ Updating you packages.\n\n"
 
-# lf
-# lf init    : ~/.config/lf/lfrc
-#   saved in : ~/dotfiles/lf/lfrc
-#
-# lf files   : ~/.config/lf
-#   saved in : ~/dotfiles/lf/
+install_pack () {
+	for var in "$@"
+	do
+		sudo apt-get install -qqq > /dev/null $var && printf "✅ ${var} "
+	done
 
-# tmux
-# tmux conf  : ~/.tmux.conf
-#   saved in : ~/dotfiles/tmux/tmux.conf
-# tmux files   : ~/.tmux/
-#   saved in : ~/dotfiles/tmux/
+}
 
-echo entry
+printf "🎁 Downloading all packages needed...\n"
+install_pack vim zsh tmux valgrind chromium-browser clang python3 python3-pip \
+             kitty htop tree i3 i3-gaps
+printf "\n✅ All packages installed.\n\n"
+
+setup_soft () {
+	for var in "$@"
+	do
+		bash ~/dotfiles/${var}/setup.sh > /dev/null && printf "✅ ${var} "
+	done
+}
+
+printf "🔧 Setup you softwares.\n"
+setup_soft i3 zsh kitty tmux vim
+
+set -x
+
+sudo chsh -s $(whereis zsh | cut -d " " -f 2)
+
+printf "\n✅ All softwares are setup.\n"
+
+printf "✅ All is ok, you can reboot ! ✅"
