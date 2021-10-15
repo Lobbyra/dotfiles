@@ -17,8 +17,8 @@ install_pack () {
 }
 
 printf "🎁 Downloading all packages needed...\n"
-install_pack vim zsh tmux valgrind chromium-browser clang python3 python3-pip \
-             kitty htop tree i3 i3-gaps
+install_pack vim zsh tmux valgrind clang python3 python3-pip \
+             htop tree i3 i3-gaps
 printf "\n✅ All packages installed.\n\n"
 
 setup_soft () {
@@ -29,7 +29,7 @@ setup_soft () {
 }
 
 printf "🔧 Setup you softwares.\n"
-setup_soft i3 zsh kitty tmux vim
+setup_soft i3 zsh tmux vim
 
 set -x
 

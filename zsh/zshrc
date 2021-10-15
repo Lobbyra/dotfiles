@@ -1,6 +1,3 @@
-# Set keyboard to US international
-setxkbmap us intl
-
 # Path to your oh-my-zsh installation.
 # DTF -> Dotfiles
 # OMZ -> oh-my-zsh
@@ -118,9 +115,6 @@ alias v="vim +Explore"
 alias web="cd ~/code/webserv"
 ###
 
-# Adding pip3 binaries
-
-xmodmap -e 'keycode 112='
-xmodmap -e 'keycode 117='
-
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
+cd ~
