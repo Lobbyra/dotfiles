@@ -35,13 +35,12 @@ setup_soft () {
 	done
 }
 
-printf "🔧 Setup you softwares.\n"
+printf "🔧 Setup your softwares.\n"
 setup_soft zsh tmux vim
 
-set -x
-
-sudo chsh -s $(whereis zsh | cut -d " " -f 2)
-
 printf "\n✅ All softwares are setup.\n"
+
+printf "\n📃 Don't forget to change your default shell\n"
+printf "📃 sudo chsh -s /usr/bin/zsh\n"
 
 printf "✅ All is ok, you can reboot ! ✅"
