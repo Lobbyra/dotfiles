@@ -25,7 +25,7 @@ install_pack () {
 }
 
 printf "🎁 Downloading all packages needed...\n"
-install_pack vim zsh tmux clang python3 python3-pip htop tree
+install_pack vim zsh tmux htop tree
 printf "\n✅ All packages installed.\n\n"
 
 setup_soft () {
