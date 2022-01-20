@@ -67,6 +67,9 @@ export PATH=$HOME/Library/Python/3.7/bin:$PATH
 # Add cargo binaries
 export PATH=$HOME/.cargo/bin:$PATH
 
+# DOCKER
+alias dps="docker ps"
+
 ### GIT
 alias gck="git checkout"
 alias gcm="git commit"
@@ -85,8 +88,6 @@ alias gcs="clang -Wall -Wextra -fsanitize=address"
 alias gcc="clang -Wall -Wextra"
 alias gpp="clang++ -Wall -Wextra"
 alias gps="clang++ -Wall -Wextra -fsanitize=address"
-
-alias make="command make -j"
 
 ###
 
