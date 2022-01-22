@@ -1,1 +1,9 @@
 *.swp
+vim/.netrwhist
+vim/plugged/onedark.vim
+vim/plugged/ultisnips
+vim/plugged/vim-better-whitespace
+vim/plugged/vim-polyglot
+zsh/oh-my-zsh
+vim/vim
+
