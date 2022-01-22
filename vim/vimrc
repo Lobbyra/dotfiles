@@ -81,9 +81,9 @@ endif
 " Selecting the colorscheme
 colorscheme onedark
 
-###################################################################
-# Explore mode config                                             #
-###################################################################
+" ###################################################################
+" # Explore mode config                                             #
+" ###################################################################
 
 " Set cursor on the first file in explore mode
 let g:netrw_banner = 0
