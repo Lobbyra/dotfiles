@@ -1,3 +1,7 @@
+###############################################
+# CREATE SHORTCUT ENV VAR FOR CONF PATHS      #
+###############################################
+
 # Path to your oh-my-zsh installation.
 # DTF -> Dotfiles
 # OMZ -> oh-my-zsh
@@ -5,9 +9,31 @@ export DTF_ROOT="$HOME/dotfiles"
 export OMZ_ROOT="$DTF_ROOT/zsh/oh-my-zsh"
 export ZSH_ROOT="$DTF_ROOT/zsh"
 export VIM_ROOT="$DTF_ROOT/vim"
+export TMUX_PRO_PATH="$DTF_ROOT/tmux/launchers"
 
+##################################
+# IMPORT MY OTHER CONFIGURATIONS #
+##################################
+
+source $ZSH_ROOT/src/aliases.conf
+
+################
+# GENERAL CONF #
+################
+
+export EDITOR="vim"
+
+########################################################
+# GRAPHIC CHANGES                                      #
+########################################################
 
 export ZSH_THEME="sunrise"
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+##############################################################
+# IMPORT OH MY ZSH                                           #
+##############################################################
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -20,33 +46,11 @@ plugins=(
 
 source $OMZ_ROOT/oh-my-zsh.sh
 
-# User configuration
+###########################################################
+# PLUGIN PRINT ALIAS CONFIG                               #
+###########################################################
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-export EDITOR="vim"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-###########CUSTOM AREA START###############"
-#
-alias lf="command lf -config $HOME/dotfiles/lf/lfrc"
-
-alias lock="i3lock-fancy -t ''"
-
-alias kub="kubectl"
-alias kubg="kubectl get"
-alias kubd="kubectl delete"
-alias kuba="kubectl apply"
-
-alias python="python3"
-alias py3="python3"
-
-#### PRINT ALIAS ###
-# Plugin : Init print-alias
-# export PRINT_ALIAS_PREFIX='  └─> '
+# export PRINT_ALIAS_PREFIX='  └─> ' # NON EMOJI VERSION
 export PRINT_ALIAS_PREFIX='  ➡️  '
 export PRINT_ALIAS_FORMAT=$'\e[1m'
 export PRINT_NON_ALIAS_FORMAT=$'\e[0m'
@@ -55,10 +59,11 @@ export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
 export PRINT_ALIAS_IGNORE_ALIASES=(my_alias my_other_alias)
 source $ZSH_ROOT/print-alias/print-alias.plugin.zsh
 
-alias nrm="~/.norminette/norminette.rb"
-alias py="python3"
+##############################################
+# PATH CONCATENATIONS                        #
+##############################################
 
-# Add brew binaries from MAC
+# Add brew binaries for MACOSX
 export PATH=$HOME/.brew/bin:$PATH
 
 # Add python binaries
@@ -67,55 +72,13 @@ export PATH=$HOME/Library/Python/3.7/bin:$PATH
 # Add cargo binaries
 export PATH=$HOME/.cargo/bin:$PATH
 
-# DOCKER
-alias dps="docker ps"
+# Add flutter binaries
+export PATH=$HOME/flutter/bin:$PATH
 
-### GIT
-alias gck="git checkout"
-alias gcm="git commit"
-alias gpu="git pull"
-alias gme="git merge"
-alias gad="git add"
-alias gdi="git diff"
-alias glo="git log"
-
-# COMPIILATION
-## C
-alias gcc="clang -Wall -Wextra"
-alias gcs="clang -Wall -Wextra -fsanitize=address"
-
-## C++
-alias gcc="clang -Wall -Wextra"
-alias gpp="clang++ -Wall -Wextra"
-alias gps="clang++ -Wall -Wextra -fsanitize=address"
-
-###
-
-alias gnf="cd ~/goinfre"
-
-alias zrc="vim ~/.zshrc ; source ~/.zshrc"
-alias vrc="vim ~/.vimrc"
-alias trc="vim ~/.tmux.conf"
-alias lrc="vim ~/dotfiles/lf/lfrc"
-alias krc="vim ~/dotfiles/kitty/kitty.conf"
-alias irc="vim ~/dotfiles/i3/config"
-alias dot="cd ~/dotfiles"
-
-################
-# TMUX Launchers
-################
-export TMUX_PRO_PATH="$DTF_ROOT/tmux/launchers"
-# Tmux project QHD Launcher
-alias tpr="/bin/bash $TMUX_PRO_PATH/basic.sh"
-
-alias rezsh="source ~/.zshrc"
-
-alias v="vim +Explore"
-
-### PROJECTS
-alias web="cd ~/code/webserv"
-###
+#  🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  #
 
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
+# That's better to start from home
 
 cd ~
