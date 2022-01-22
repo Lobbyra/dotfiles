@@ -1,43 +1,63 @@
-"#########
-"# Plugins
-"#########
+"##########################################
+"# Plugins                                #
+"##########################################
 
 call plug#begin('~/dotfiles/vim/plugged')
 
 " Colorscheme
 Plug 'joshdick/onedark.vim'
+
 " Additionnal synthax
 Plug 'sheerun/vim-polyglot'
+
 " Display the tab index
 Plug 'mkitt/tabline.vim'
+
 " Ultisnip engine
 Plug 'SirVer/ultisnips'
+
 " Surround auto chars need to be surrounded
 Plug 'Raimondi/delimitMate'
+
 " Put in color hex text
 Plug 'vim-scripts/colorizer'
+
 " Highlight useless whitespaces
 Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
-"#######################
-"# Miscellaneous changes
-"#######################
+"########################
+"# General changes      #
+"########################
+
+" Enable the mouse in vim
 set mouse=a
 
-"################
-"# Typing changes
-"################
+"##############################################
+"# Typing changes                             #
+"##############################################
 
 set tabstop     =4
 set softtabstop =4
 set shiftwidth  =4
 set expandtab
 
-"#################
-"# Graphic changes
-"#################
+" Stoping vim to add comments on new line
+" autocmd used to override the option in all vim
+autocmd FileType * set formatoptions-=c
+autocmd FileType * set formatoptions-=r
+autocmd FileType * set formatoptions-=o
+
+" Ultisnip config
+let g:UltiSnipsExpandTrigger="<tab>"
+
+" Search and replace with ctrl+r in visual mode
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+"#########################################
+"# Graphic changes                       #
+"#########################################
 
 "# Set color column at 80 chars
 set colorcolumn=80
@@ -58,14 +78,12 @@ if (os_sys == "Linux" )
     set termguicolors
 endif
 
-" Ultisnip config
-let g:UltiSnipsExpandTrigger="<tab>"
+" Selecting the colorscheme
+colorscheme onedark
 
-" Search and replace with ctrl+r in visual mode
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-" Set view tree in explore mode
-" let g:netrw_liststyle="3"
+###################################################################
+# Explore mode config                                             #
+###################################################################
 
 " Set cursor on the first file in explore mode
 let g:netrw_banner = 0
@@ -73,7 +91,6 @@ let g:netrw_banner = 0
 " Display numbers in Explorer mode
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
-" For vim to use explore when E command
+" Overriding E command with explore mode
 command! -nargs=* -bar -bang -count=0 -complete=dir E Explore <args>
 
-colorscheme onedark
