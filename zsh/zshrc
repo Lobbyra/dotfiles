@@ -11,12 +11,6 @@ export ZSH_ROOT="$DTF_ROOT/zsh"
 export VIM_ROOT="$DTF_ROOT/vim"
 export TMUX_PRO_PATH="$DTF_ROOT/tmux/launchers"
 
-##################################
-# IMPORT MY OTHER CONFIGURATIONS #
-##################################
-
-source $ZSH_ROOT/src/aliases.conf
-
 ################
 # GENERAL CONF #
 ################
@@ -74,6 +68,12 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 # Add flutter binaries
 export PATH=$HOME/flutter/bin:$PATH
+
+##################################
+# IMPORT MY OTHER CONFIGURATIONS #
+##################################
+
+source $ZSH_ROOT/src/aliases.conf
 
 #  🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  #
 
