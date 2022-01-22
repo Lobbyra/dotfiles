@@ -77,7 +77,7 @@ source $ZSH_ROOT/src/aliases.conf
 
 #  🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  #
 
-[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+[ -z "$TMUX"  ] && { tmux attach || exec tmux -f ~/.tmux.conf && exit;}
 
 # That's better to start from home
 
