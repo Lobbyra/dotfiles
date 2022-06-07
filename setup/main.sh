@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit if any command fail
+set -e
+
 clear
 
 echo "
