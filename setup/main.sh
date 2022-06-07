@@ -13,8 +13,12 @@ echo "
 sudo add-apt-repository -y ppa:kgilmer/speed-ricer &> /dev/null
 
 printf "⬆️  Updating you packages...\n"
-sudo apt -qqq update
+sudo apt -qqq update 
 printf "✅ Updating you packages.\n\n"
+
+printf "⬆️  Upgrading you packages...\n"
+sudo apt -qqq upgrade
+printf "✅ Upgrading you packages.\n\n"
 
 install_pack () {
 	for var in "$@"
