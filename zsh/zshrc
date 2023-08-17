@@ -9,7 +9,6 @@ export DTF_ROOT="$HOME/dotfiles"
 export OMZ_ROOT="$DTF_ROOT/zsh/oh-my-zsh"
 export ZSH_ROOT="$DTF_ROOT/zsh"
 export VIM_ROOT="$DTF_ROOT/vim"
-export TMUX_PRO_PATH="$DTF_ROOT/tmux/launchers"
 
 ################
 # GENERAL CONF #
@@ -75,10 +74,4 @@ export PATH=$HOME/flutter/bin:$PATH
 
 source $ZSH_ROOT/src/aliases.conf
 
-#  🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  #
-
-[ -z "$TMUX"  ] && { tmux attach || exec tmux -f ~/.tmux.conf && exit;}
-
-# That's better to start from home
-
-cd ~
+# 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  #

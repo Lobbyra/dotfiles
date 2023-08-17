@@ -9,5 +9,3 @@ git clone -q https://github.com/ohmyzsh/ohmyzsh.git \
              $HOME/dotfiles/zsh/oh-my-zsh
 
 ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
-
-chsh $(whereis zsh)

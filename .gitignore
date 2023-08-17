@@ -6,4 +6,5 @@
 /vim/plugged/vim-polyglot/
 /zsh/oh-my-zsh/
 /vim/vim/
-
+zsh/oh-my-zsh/
+tmux/plugins/

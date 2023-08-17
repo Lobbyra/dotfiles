@@ -56,6 +56,6 @@ setup_soft zsh tmux vim
 printf "\n✅ All softwares are setup.\n"
 
 printf "\n📃 Don't forget to change your default shell\n"
-printf "📃 sudo chsh -s /usr/bin/zsh\n"
+printf "📃 man chsh"
 
 printf "✅ All is ok, you can reboot ! ✅\n"
