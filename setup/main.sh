@@ -13,15 +13,13 @@ echo "
 ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝"
 
-sudo add-apt-repository -y ppa:kgilmer/speed-ricer &> /dev/null
+printf "⬆️ Updating your packages...\n"
+sudo apt -qqq update
+printf "✅ Updating your packages.\n\n"
 
-printf "⬆️  Updating you packages...\n"
-sudo apt -qqq update 
-printf "✅ Updating you packages.\n\n"
-
-printf "⬆️  Upgrading you packages...\n"
+printf "⬆️ Upgrading your packages...\n"
 sudo apt -qqq upgrade
-printf "✅ Upgrading you packages.\n\n"
+printf "✅ Upgrading your packages.\n\n"
 
 install_pack () {
 	for var in "$@"
@@ -31,14 +29,24 @@ install_pack () {
 
 }
 
-printf "🎁 Downloading all packages needed...\n"
+printf "🎁 Installing basic packages...\n"
 install_pack vim zsh tmux htop tree
-printf "\n✅ All packages installed.\n\n"
+printf "\n✅ All basic packages installed.\n\n"
 
 setup_soft () {
 	for var in "$@"
 	do
-		bash ~/dotfiles/${var}/setup.sh > /dev/null && printf "✅ ${var} "
+        printf "Setup ${var}? (y/n) : "
+        read askSetup
+        if [[ "${askSetup}" == "y" ]]; then
+            printf "📦 Setting it up...\n"
+            bash ~/dotfiles/${var}/setup.sh > /dev/null && printf "✅ ${var} "
+        elif [[ "${askSetup}" == "n" ]]; then
+            printf "➡️ Ok, ${var} setup is skipped\n"
+        else
+            printf "🚫 Wrong input. Leaving script.\n"
+            exit 1
+        fi
 	done
 }
 
@@ -50,4 +58,4 @@ printf "\n✅ All softwares are setup.\n"
 printf "\n📃 Don't forget to change your default shell\n"
 printf "📃 sudo chsh -s /usr/bin/zsh\n"
 
-printf "✅ All is ok, you can reboot ! ✅"
+printf "✅ All is ok, you can reboot ! ✅\n"
