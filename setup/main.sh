@@ -17,10 +17,6 @@ printf "⬆️ Updating your packages...\n"
 sudo apt -qqq update
 printf "✅ Updating your packages.\n\n"
 
-printf "⬆️ Upgrading your packages...\n"
-sudo apt -qqq upgrade
-printf "✅ Upgrading your packages.\n\n"
-
 install_pack () {
 	for var in "$@"
 	do

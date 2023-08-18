@@ -6,5 +6,13 @@
 /vim/plugged/vim-polyglot/
 /zsh/oh-my-zsh/
 /vim/vim/
-zsh/oh-my-zsh/
-tmux/plugins/
+/zsh/oh-my-zsh/
+/tmux/plugins/
+metasploit-latest-linux-x64-installer.run
+tmux/plugins/tmux-sensible
+tmux/plugins/tpm
+vim/plugged/onedark.vim
+vim/plugged/ultisnips
+vim/plugged/vim-better-whitespace
+vim/plugged/vim-polyglot
+zsh/oh-my-zsh
