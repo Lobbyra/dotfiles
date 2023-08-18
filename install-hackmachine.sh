@@ -94,7 +94,7 @@ sudo apt-get install -y -qqq > /dev/null $toInstall && printf "✅ ${toInstall}\
 
 # Installing golang-go
 toInstall='golang-go'
-sudo apt-get install -y -qqq > /dev/null gcc clang && printf "✅ ${toInstall}\n"
+sudo apt-get install -y -qqq > /dev/null $toInstall && printf "✅ ${toInstall}\n"
 
 # Info metasploit
 if [ ! -f metasploit-latest-linux-x64-installer.run ]; then
